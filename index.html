@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Photo Zip - Image Compression</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <main class="container">
+        <!-- Header Section -->
+        <header class="app-header">
+            <h1>Photo Zip</h1>
+            <p class="subtitle">Compress your images without compromising quality</p>
+        </header>
+
+        <!-- Main Content Section -->
+        <section class="compression-area">
+            <!-- Upload Area -->
+            <div class="upload-container" id="uploadArea">
+                <div class="upload-box" id="dropZone">
+                    <svg class="upload-icon" width="50" height="50" viewBox="0 0 24 24">
+                        <path d="M11 15h2V6h3l-4-5-4 5h3z"/>
+                        <path d="M20 18H4v-7H2v7c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2v-7h-2z"/>
+                    </svg>
+                    <p>Drag and drop your image here<br>or <span class="highlight">browse</span></p>
+                    <input type="file" id="fileInput" accept="image/*" hidden>
+                </div>
+            </div>
+
+            <!-- Preview Area -->
+            <div class="preview-container" id="previewArea" style="display: none;">
+                <div class="preview-box">
+                    <div class="original-image">
+                        <h3>Original</h3>
+                        <div class="image-wrapper">
+                            <img id="originalPreview" alt="Original image preview">
+                        </div>
+                        <div class="file-info">
+                            <span id="originalSize">0 KB</span>
+                        </div>
+                    </div>
+                    <div class="compressed-image">
+                        <h3>Compressed</h3>
+                        <div class="image-wrapper">
+                            <img id="compressedPreview" alt="Compressed image preview">
+                        </div>
+                        <div class="file-info">
+                            <span id="compressedSize">0 KB</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Compression Controls -->
+                <div class="compression-controls">
+                    <div class="quality-slider">
+                        <label for="qualityRange">Compression Quality</label>
+                        <input type="range" id="qualityRange" min="0" max="100" value="80">
+                        <span id="qualityValue">80%</span>
+                    </div>
+                    <button id="downloadBtn" class="download-button">
+                        Download Compressed Image
+                    </button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="js/main.js"></script>
+</body>
+</html> 
